@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="wear.TAM | The Alisa Musa. Put together every day. Premium fashion pieces designed for the modern woman." />
+  <title>wear.TAM | The Alisa Musa</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       CUSTOM CURSOR
+  ============================================================ -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ============================================================
+       LOADER
+  ============================================================ -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <span class="loader-script">wear.</span><span class="loader-bold">TAM</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <!-- Logo -->
+      <a href="#home" class="nav-logo">
+        <span class="logo-script">wear.</span><span class="logo-bold">TAM</span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#collection" class="nav-link">Collection</a></li>
+        <li><a href="#story" class="nav-link">Our Story</a></li>
+        <li><a href="#lookbook" class="nav-link">Lookbook</a></li>
+        <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Nav actions -->
+      <div class="nav-actions">
+        <button class="nav-icon cart-btn" id="cartBtn" aria-label="Cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#collection" class="mobile-link">Collection</a></li>
+        <li><a href="#story" class="mobile-link">Our Story</a></li>
+        <li><a href="#lookbook" class="mobile-link">Lookbook</a></li>
+        <li><a href="#testimonials" class="mobile-link">Reviews</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+      <div class="mobile-socials">
+        <a href="https://www.instagram.com/wear.tam" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto">
+        <source src="assets/images/TAM-video.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal-up">New Collection · 2026</p>
+      <h1 class="hero-headline reveal-up">
+        Dress the<br/>
+        <em>story</em> you<br/>
+        want to tell.
+      </h1>
+      <p class="hero-sub reveal-up">Effortless pieces for the woman who moves with intention.</p>
+      <div class="hero-actions reveal-up">
+        <a href="#collection" class="btn btn-primary">Shop the Collection</a>
+        <a href="#story" class="btn btn-ghost">Our Story</a>
+      </div>
+    </div>
+
+    <div class="hero-tagline">
+      <span>PUT TOGETHER EVERY DAY</span>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MARQUEE TICKER
+  ============================================================ -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>wear.TAM</span>
+      <span class="marquee-dot">·</span>
+      <span>The Alisa Musa</span>
+      <span class="marquee-dot">·</span>
+      <span>Put Together Every Day</span>
+      <span class="marquee-dot">·</span>
+      <span>New Collection 2026</span>
+      <span class="marquee-dot">·</span>
+      <span>wear.TAM</span>
+      <span class="marquee-dot">·</span>
+      <span>The Alisa Musa</span>
+      <span class="marquee-dot">·</span>
+      <span>Put Together Every Day</span>
+      <span class="marquee-dot">·</span>
+      <span>New Collection 2026</span>
+      <span class="marquee-dot">·</span>
+      <span>wear.TAM</span>
+      <span class="marquee-dot">·</span>
+      <span>The Alisa Musa</span>
+      <span class="marquee-dot">·</span>
+      <span>Put Together Every Day</span>
+      <span class="marquee-dot">·</span>
+      <span>New Collection 2026</span>
+      <span class="marquee-dot">·</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       COLLECTION SECTION
+  ============================================================ -->
+  <section class="collection" id="collection">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-eyebrow">The Collection</p>
+        <h2 class="section-title">Curated for <em>You</em></h2>
+        <p class="section-sub">Each piece is crafted with intention, for the woman who shows up fully, every day.</p>
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="filter-tabs reveal-up">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="sets">Sets</button>
+        <button class="filter-tab" data-filter="tops">Tops</button>
+        <button class="filter-tab" data-filter="dresses">Dresses</button>
+        <button class="filter-tab" data-filter="outerwear">Outerwear</button>
+      </div>
+
+      <!-- Products grid -->
+      <div class="products-grid" id="productsGrid">
+
+        <div class="product-card reveal-up" data-category="sets">
+          <div class="product-img-wrap">
+            <div class="product-img product-img-1"></div>
+            <div class="product-img product-img-hover product-img-1h"></div>
+            <div class="product-badges">
+              <span class="badge badge-new">New</span>
+            </div>
+            <button class="quick-add" data-id="1" data-name="The TAM Wide-Leg Trouser" data-price="45,000">Quick Add</button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">The TAM Wide-Leg Trouser</h3>
+            <p class="product-desc">Rich print, gold trim, pure statement</p>
+            <div class="product-footer">
+              <span class="product-price">₦45,000</span>
+              <button class="product-view-btn" data-id="1">View</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal-up" data-category="sets">
+          <div class="product-img-wrap">
+            <div class="product-img product-img-2"></div>
+            <div class="product-img product-img-hover product-img-2h"></div>
+            <div class="product-badges">
+              <span class="badge badge-bestseller">Bestseller</span>
+            </div>
+            <button class="quick-add" data-id="2" data-name="TAM Printed Trouser + Shirt Set" data-price="62,000">Quick Add</button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">TAM Trouser + Shirt Set</h3>
+            <p class="product-desc">The full look, effortlessly coordinated</p>
+            <div class="product-footer">
+              <span class="product-price">₦62,000</span>
+              <button class="product-view-btn" data-id="2">View</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal-up" data-category="sets">
+          <div class="product-img-wrap">
+            <div class="product-img product-img-3"></div>
+            <div class="product-img product-img-hover product-img-3h"></div>
+            <div class="product-badges">
+              <span class="badge badge-new">New</span>
+            </div>
+            <button class="quick-add" data-id="3" data-name="TAM Co-ord Set" data-price="62,000">Quick Add</button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">TAM Co-ord Set</h3>
+            <p class="product-desc">Matching power, redefined</p>
+            <div class="product-footer">
+              <span class="product-price">₦62,000</span>
+              <button class="product-view-btn" data-id="3">View</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal-up" data-category="outerwear">
+          <div class="product-img-wrap">
+            <div class="product-img product-img-4"></div>
+            <div class="product-img product-img-hover product-img-4h"></div>
+            <button class="quick-add" data-id="4" data-name="The Bone Blazer" data-price="75,000">Quick Add</button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">The Bone Blazer</h3>
+            <p class="product-desc">Structure that speaks before you do</p>
+            <div class="product-footer">
+              <span class="product-price">₦75,000</span>
+              <button class="product-view-btn" data-id="4">View</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal-up" data-category="dresses">
+          <div class="product-img-wrap">
+            <div class="product-img product-img-5"></div>
+            <div class="product-img product-img-hover product-img-5h"></div>
+            <div class="product-badges">
+              <span class="badge badge-limited">Limited</span>
+            </div>
+            <button class="quick-add" data-id="5" data-name="Gold Drape Midi" data-price="52,000">Quick Add</button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Gold Drape Midi</h3>
+            <p class="product-desc">For the moments that matter most</p>
+            <div class="product-footer">
+              <span class="product-price">₦52,000</span>
+              <button class="product-view-btn" data-id="5">View</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal-up" data-category="tops">
+          <div class="product-img-wrap">
+            <div class="product-img product-img-6"></div>
+            <div class="product-img product-img-hover product-img-6h"></div>
+            <button class="quick-add" data-id="6" data-name="Charcoal Corset Top" data-price="22,000">Quick Add</button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Charcoal Corset Top</h3>
+            <p class="product-desc">Bold, minimal, undeniably TAM</p>
+            <div class="product-footer">
+              <span class="product-price">₦22,000</span>
+              <button class="product-view-btn" data-id="6">View</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BRAND STORY SECTION
+  ============================================================ -->
+  <section class="story" id="story">
+    <div class="story-inner">
+      <div class="story-visual reveal-left">
+        <div class="story-img-main"></div>
+        <div class="story-img-accent">
+          <span class="story-accent-text">EST. 2024</span>
+        </div>
+        <div class="story-stat">
+          <strong>100+</strong>
+          <span>Women Dressed</span>
+        </div>
+      </div>
+      <div class="story-content reveal-right">
+        <p class="section-eyebrow">Our Story</p>
+        <h2 class="section-title">Built for the<br/><em>woman who knows.</em></h2>
+        <p class="story-text">
+          TAM, The Alisa Musa, was born from a simple belief: every woman deserves to feel put together, not just on special occasions, but every single day.
+        </p>
+        <p class="story-text">
+          We design pieces that work as hard as you do. Silhouettes that hold their shape. Fabrics that feel like a second skin. Colours that make you stop and look twice.
+        </p>
+        <p class="story-text">
+          This isn't fast fashion. This is your wardrobe, built to last.
+        </p>
+        <div class="story-values">
+          <div class="value-item">
+            <i class="fas fa-gem"></i>
+            <span>Quality First</span>
+          </div>
+          <div class="value-item">
+            <i class="fas fa-heart"></i>
+            <span>Made with Love</span>
+          </div>
+          <div class="value-item">
+            <i class="fas fa-leaf"></i>
+            <span>Intentional Design</span>
+          </div>
+        </div>
+        <a href="#collection" class="btn btn-primary">Shop the Collection</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FEATURE STRIP
+  ============================================================ -->
+  <section class="features-strip">
+    <div class="features-inner">
+      <div class="feature-item reveal-up">
+        <i class="fas fa-truck-fast"></i>
+        <div>
+          <strong>Fast Delivery</strong>
+          <span>Lagos & nationwide shipping</span>
+        </div>
+      </div>
+      <div class="feature-divider"></div>
+      <div class="feature-item reveal-up">
+        <i class="fas fa-rotate-left"></i>
+        <div>
+          <strong>Easy Returns</strong>
+          <span>7-day return policy</span>
+        </div>
+      </div>
+      <div class="feature-divider"></div>
+      <div class="feature-item reveal-up">
+        <i class="fas fa-lock"></i>
+        <div>
+          <strong>Secure Payment</strong>
+          <span>Powered by Flutterwave</span>
+        </div>
+      </div>
+      <div class="feature-divider"></div>
+      <div class="feature-item reveal-up">
+        <i class="fas fa-ruler"></i>
+        <div>
+          <strong>Size Inclusive</strong>
+          <span>XS to 3XL available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LOOKBOOK
+  ============================================================ -->
+  <section class="lookbook" id="lookbook">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-eyebrow">Lookbook</p>
+        <h2 class="section-title">The <em>TAM</em> Aesthetic</h2>
+      </div>
+    </div>
+    <div class="lookbook-strip">
+      <div class="lookbook-track">
+        <div class="lookbook-card lb-1">
+          <div class="lb-overlay"><span>The Alisa Dress</span></div>
+        </div>
+        <div class="lookbook-card lb-2">
+          <div class="lb-overlay"><span>Musa Wrap Top</span></div>
+        </div>
+        <div class="lookbook-card lb-3">
+          <div class="lb-overlay"><span>TAM Co-ord Set</span></div>
+        </div>
+        <div class="lookbook-card lb-4">
+          <div class="lb-overlay"><span>The Bone Blazer</span></div>
+        </div>
+        <div class="lookbook-card lb-5">
+          <div class="lb-overlay"><span>Gold Drape Midi</span></div>
+        </div>
+        <div class="lookbook-card lb-6">
+          <div class="lb-overlay"><span>Charcoal Corset Top</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIALS
+  ============================================================ -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-eyebrow">Reviews</p>
+        <h2 class="section-title">What She <em>Said</em></h2>
+      </div>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card reveal-up">
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"I wore the Alisa Dress to my sister's wedding and I cannot tell you how many compliments I got. The fabric is so luxurious. TAM is the real deal."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar av-1"></div>
+            <div>
+              <strong>Amara O.</strong>
+              <span>Lagos, Nigeria</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal-up">
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"The co-ord set is everything. I styled it two different ways for two different events and both times I felt like a whole moment. This brand understands women."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar av-2"></div>
+            <div>
+              <strong>Fatima K.</strong>
+              <span>Abuja, Nigeria</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal-up">
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Delivery was fast and the packaging was so beautiful I didn't want to open it. The Bone Blazer fits perfectly. Already planning my next order."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar av-3"></div>
+            <div>
+              <strong>Chidinma E.</strong>
+              <span>Port Harcourt, Nigeria</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       INSTAGRAM / SOCIALS
+  ============================================================ -->
+  <section class="social-section" id="social">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-eyebrow">Follow Along</p>
+        <h2 class="section-title">@wear.tam</h2>
+        <p class="section-sub">Tag us in your TAM looks for a chance to be featured.</p>
+      </div>
+      <div class="social-grid reveal-up">
+        <a href="https://www.instagram.com/wear.tam" target="_blank" rel="noopener" class="social-tile st-1" aria-label="Visit our Instagram">
+          <div class="social-tile-overlay"><i class="fab fa-instagram"></i></div>
+        </a>
+        <a href="https://www.instagram.com/wear.tam" target="_blank" rel="noopener" class="social-tile st-2" aria-label="Visit our Instagram">
+          <div class="social-tile-overlay"><i class="fab fa-instagram"></i></div>
+        </a>
+        <a href="https://www.instagram.com/wear.tam" target="_blank" rel="noopener" class="social-tile st-3" aria-label="Visit our Instagram">
+          <div class="social-tile-overlay"><i class="fab fa-instagram"></i></div>
+        </a>
+        <a href="https://www.instagram.com/wear.tam" target="_blank" rel="noopener" class="social-tile st-4" aria-label="Visit our Instagram">
+          <div class="social-tile-overlay"><i class="fab fa-instagram"></i></div>
+        </a>
+        <a href="https://www.instagram.com/wear.tam" target="_blank" rel="noopener" class="social-tile st-5" aria-label="Visit our Instagram">
+          <div class="social-tile-overlay"><i class="fab fa-instagram"></i></div>
+        </a>
+        <a href="https://www.instagram.com/wear.tam" target="_blank" rel="noopener" class="social-tile st-6" aria-label="Visit our Instagram">
+          <div class="social-tile-overlay"><i class="fab fa-instagram"></i></div>
+        </a>
+      </div>
+      <div class="social-cta reveal-up">
+        <a href="https://www.instagram.com/wear.tam" target="_blank" rel="noopener" class="btn btn-outline">
+          <i class="fab fa-instagram"></i> Follow on Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       NEWSLETTER
+  ============================================================ -->
+  <section class="newsletter">
+    <div class="newsletter-inner reveal-up">
+      <p class="section-eyebrow" style="color: #C5AB80;">Stay in the loop</p>
+      <h2 class="newsletter-title">First looks. New drops.<br/>Yours before anyone else.</h2>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="Your email address" required aria-label="Email address" />
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+      <p class="newsletter-note">No spam. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT SECTION
+  ============================================================ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-info reveal-left">
+          <p class="section-eyebrow">Get in Touch</p>
+          <h2 class="section-title">Let's <em>talk.</em></h2>
+          <p class="contact-text">Have a question about sizing, orders, or a custom request? We'd love to hear from you.</p>
+
+          <div class="contact-details">
+            <a href="mailto:hello@weartam.com" class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>hello@weartam.com</span>
+            </a>
+            <a href="tel:+2348143631189" class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>+234 814 363 1189</span>
+            </a>
+            <a href="https://wa.me/2348143631189" class="contact-item" target="_blank" rel="noopener">
+              <i class="fab fa-whatsapp"></i>
+              <span>Chat on WhatsApp</span>
+            </a>
+            <div class="contact-item">
+              <i class="fas fa-location-dot"></i>
+              <span>Abuja, Nigeria</span>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <a href="https://www.instagram.com/wear.tam" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal-right" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Alisa" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Musa" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us what's on your mind..." rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo footer-logo">
+            <span class="logo-script">wear.</span><span class="logo-bold">TAM</span>
+          </a>
+          <p>The Alisa Musa.<br/>Put together every day.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/wear.tam" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#collection">New Arrivals</a></li>
+            <li><a href="#collection">Dresses</a></li>
+            <li><a href="#collection">Tops</a></li>
+            <li><a href="#collection">Sets</a></li>
+            <li><a href="#collection">Outerwear</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Brand</h4>
+          <ul>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#lookbook">Lookbook</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 wear.TAM | The Alisa Musa. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       CART DRAWER
+  ============================================================ -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h3>Your Bag <span id="cartDrawerCount">(0)</span></h3>
+      <button class="cart-close" id="cartClose" aria-label="Close cart"><i class="fas fa-xmark"></i></button>
+    </div>
+    <div class="cart-drawer-body" id="cartBody">
+      <div class="cart-empty" id="cartEmpty">
+        <i class="fas fa-shopping-bag"></i>
+        <p>Your bag is empty.</p>
+        <a href="#collection" class="btn btn-primary" id="cartShopLink">Shop Now</a>
+      </div>
+      <ul class="cart-items" id="cartItems"></ul>
+    </div>
+    <div class="cart-drawer-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">₦0</strong>
+      </div>
+      <a href="#" class="btn btn-primary btn-full" id="checkoutBtn" target="_blank" rel="noopener">
+        Proceed to Payment <i class="fas fa-arrow-right"></i>
+      </a>
+      <p class="cart-secure"><i class="fas fa-lock"></i> Secured by Flutterwave</p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PRODUCT MODAL
+  ============================================================ -->
+  <div class="modal-overlay" id="modalOverlay"></div>
+  <div class="product-modal" id="productModal" role="dialog" aria-modal="true" aria-label="Product details">
+    <button class="modal-close" id="modalClose" aria-label="Close modal"><i class="fas fa-xmark"></i></button>
+    <div class="modal-inner">
+      <div class="modal-gallery">
+        <div class="modal-main-img" id="modalMainImg"></div>
+        <div class="modal-thumbs" id="modalThumbs"></div>
+      </div>
+      <div class="modal-details">
+        <p class="modal-eyebrow" id="modalEyebrow">wear.TAM</p>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <p class="modal-price" id="modalPrice"></p>
+        <p class="modal-desc" id="modalDesc"></p>
+
+        <div class="modal-sizes">
+          <p class="size-label">Select Size</p>
+          <div class="size-options" id="sizeOptions">
+            <button class="size-btn">XS</button>
+            <button class="size-btn">S</button>
+            <button class="size-btn active">M</button>
+            <button class="size-btn">L</button>
+            <button class="size-btn">XL</button>
+            <button class="size-btn">2XL</button>
+          </div>
+          <a href="#" class="size-guide-link">Size Guide <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn btn-primary btn-full modal-add-btn" id="modalAddBtn">
+            <i class="fas fa-shopping-bag"></i> Add to Bag
+          </button>
+          <a href="#" class="btn btn-outline btn-full" id="modalPayBtn" target="_blank" rel="noopener">
+            <i class="fas fa-bolt"></i> Buy Now
+          </a>
+        </div>
+
+        <div class="modal-meta">
+          <div class="modal-meta-item">
+            <i class="fas fa-truck-fast"></i>
+            <span>Free delivery on orders above ₦50,000</span>
+          </div>
+          <div class="modal-meta-item">
+            <i class="fas fa-rotate-left"></i>
+            <span>7-day return policy</span>
+          </div>
+          <div class="modal-meta-item">
+            <i class="fas fa-lock"></i>
+            <span>Secure checkout via Flutterwave</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       TOAST NOTIFICATION
+  ============================================================ -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ============================================================
+       BACK TO TOP
+  ============================================================ -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
