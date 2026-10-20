@@ -1468,6 +1468,42 @@ ul { list-style: none; }
 
 .modal-sizes { margin-bottom: 28px; }
 
+/* Mode toggle */
+.size-mode-toggle {
+  display: flex;
+  background: var(--grey-light);
+  border-radius: 100px;
+  padding: 3px;
+  margin-bottom: 20px;
+  gap: 2px;
+}
+
+.size-mode-btn {
+  flex: 1;
+  padding: 8px 12px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--grey-soft);
+  border-radius: 100px;
+  border: none;
+  background: transparent;
+  transition: var(--transition-fast);
+  cursor: none;
+  white-space: nowrap;
+}
+
+.size-mode-btn.active {
+  background: var(--black);
+  color: var(--bone);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Panels */
+.size-panel { }
+.size-panel.hidden { display: none; }
+
 .size-label {
   font-size: 0.7rem;
   font-weight: 600;
@@ -1504,6 +1540,115 @@ ul { list-style: none; }
 }
 
 .size-guide-link:hover { color: var(--black); }
+
+/* Measurements panel */
+.optional-tag {
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: var(--grey-soft);
+  text-transform: none;
+  letter-spacing: 0;
+  margin-left: 6px;
+  font-style: italic;
+}
+
+.measurements-note {
+  font-size: 0.75rem;
+  color: var(--grey-soft);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  background: var(--bone);
+  border-left: 2px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.measurements-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.measurement-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.measurement-field label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.measurement-field label i {
+  color: var(--gold);
+  font-size: 0.45rem;
+}
+
+.measurement-input-wrap {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--grey-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+  background: var(--white);
+}
+
+.measurement-input-wrap:focus-within {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(197,171,128,0.12);
+}
+
+.measurement-input-wrap input {
+  flex: 1;
+  padding: 9px 10px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--black);
+  border: none;
+  outline: none;
+  background: transparent;
+  min-width: 0;
+}
+
+.measurement-input-wrap input::placeholder { color: var(--grey-light); }
+
+.measurement-input-wrap span {
+  padding: 0 10px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--grey-soft);
+  background: var(--bone);
+  border-left: 1.5px solid var(--grey-light);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  letter-spacing: 0.06em;
+}
+
+.measurements-save-note {
+  font-size: 0.72rem;
+  color: var(--grey-soft);
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  line-height: 1.5;
+}
+
+.measurements-save-note i {
+  color: var(--gold);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
 
 .modal-actions {
   display: flex; flex-direction: column; gap: 10px;
@@ -1629,6 +1774,8 @@ ul { list-style: none; }
   .modal-inner { grid-template-columns: 1fr; max-height: 95dvh; }
   .modal-gallery { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
   .modal-details { padding: 28px 20px; }
+  .measurements-grid { grid-template-columns: 1fr 1fr; }
+  .size-mode-btn { font-size: 0.65rem; padding: 8px 8px; }
 }
 
 @media (max-width: 480px) {

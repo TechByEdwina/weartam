@@ -462,6 +462,12 @@ const cart = {
     modal?.classList.remove('open');
     document.body.classList.remove('no-scroll');
     currentProductId = null;
+
+    // Reset mode to standard
+    document.querySelectorAll('.size-mode-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('modeStandard')?.classList.add('active');
+    document.getElementById('panelStandard')?.classList.remove('hidden');
+    document.getElementById('panelMeasurements')?.classList.add('hidden');
   }
 
   // Open modal from "View" buttons
@@ -495,12 +501,42 @@ const cart = {
   // Add to bag from modal
   addBtn?.addEventListener('click', () => {
     if (currentProductId === null) return;
-    const product = cart.add(currentProductId, selectedSize);
+
+    // Check which mode is active
+    const activeModeBtn = document.querySelector('.size-mode-btn.active');
+    const mode = activeModeBtn ? activeModeBtn.dataset.mode : 'standard';
+
+    let sizeLabel = selectedSize;
+
+    if (mode === 'measurements') {
+      // Collect filled-in measurements
+      const fields = {
+        'Bust':           document.getElementById('mBust')?.value,
+        'Waist':          document.getElementById('mWaist')?.value,
+        'Hips':           document.getElementById('mHips')?.value,
+        'Height':         document.getElementById('mHeight')?.value,
+        'Shoulder':       document.getElementById('mShoulder')?.value,
+        'Sleeve':         document.getElementById('mSleeve')?.value,
+        'Thigh':          document.getElementById('mThigh')?.value,
+        'Inseam':         document.getElementById('mInseam')?.value,
+        'Back Length':    document.getElementById('mBackLength')?.value,
+        'Neck':           document.getElementById('mNeck')?.value,
+      };
+
+      const filled = Object.entries(fields)
+        .filter(([, v]) => v && v.trim() !== '')
+        .map(([k, v]) => `${k}: ${v}cm`);
+
+      sizeLabel = filled.length > 0
+        ? 'Custom (' + filled.join(', ') + ')'
+        : 'Custom Measurements';
+    }
+
+    const product = cart.add(currentProductId, sizeLabel);
     if (product) {
       showToast(`${product.name} added to bag ✓`);
       closeModal();
 
-      // Open cart drawer
       setTimeout(() => {
         document.getElementById('cartDrawer')?.classList.add('open');
         document.getElementById('cartOverlay')?.classList.add('open');
@@ -521,7 +557,30 @@ const cart = {
   });
 })();
 
-/* ─── FILTER TABS ─────────────────────────────────────── */
+/* ─── SIZE MODE TOGGLE ───────────────────────────────── */
+(function initSizeModeToggle() {
+  const modeBtns      = document.querySelectorAll('.size-mode-btn');
+  const panelStandard = document.getElementById('panelStandard');
+  const panelMeasure  = document.getElementById('panelMeasurements');
+
+  modeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      modeBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const mode = btn.dataset.mode;
+      if (mode === 'standard') {
+        panelStandard?.classList.remove('hidden');
+        panelMeasure?.classList.add('hidden');
+      } else {
+        panelStandard?.classList.add('hidden');
+        panelMeasure?.classList.remove('hidden');
+      }
+    });
+  });
+})();
+
+
 (function initFilterTabs() {
   const tabs  = document.querySelectorAll('.filter-tab');
   const cards = document.querySelectorAll('.product-card[data-category]');

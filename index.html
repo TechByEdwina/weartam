@@ -686,16 +686,125 @@
         <p class="modal-desc" id="modalDesc"></p>
 
         <div class="modal-sizes">
-          <p class="size-label">Select Size</p>
-          <div class="size-options" id="sizeOptions">
-            <button class="size-btn">XS</button>
-            <button class="size-btn">S</button>
-            <button class="size-btn active">M</button>
-            <button class="size-btn">L</button>
-            <button class="size-btn">XL</button>
-            <button class="size-btn">2XL</button>
+          <!-- Mode toggle -->
+          <div class="size-mode-toggle">
+            <button class="size-mode-btn active" id="modeStandard" data-mode="standard">Standard Size</button>
+            <button class="size-mode-btn" id="modeMeasurements" data-mode="measurements">My Measurements</button>
           </div>
-          <a href="#" class="size-guide-link">Size Guide <i class="fas fa-chevron-right"></i></a>
+
+          <!-- Standard sizes -->
+          <div class="size-panel" id="panelStandard">
+            <p class="size-label">Select your size</p>
+            <div class="size-options" id="sizeOptions">
+              <button class="size-btn">XS</button>
+              <button class="size-btn">S</button>
+              <button class="size-btn active">M</button>
+              <button class="size-btn">L</button>
+              <button class="size-btn">XL</button>
+              <button class="size-btn">2XL</button>
+              <button class="size-btn">3XL</button>
+            </div>
+            <a href="#" class="size-guide-link">Size Guide <i class="fas fa-chevron-right"></i></a>
+          </div>
+
+          <!-- Custom measurements -->
+          <div class="size-panel hidden" id="panelMeasurements">
+            <p class="size-label">Enter your measurements <span class="optional-tag">all optional</span></p>
+            <p class="measurements-note">All measurements in centimetres (cm). Your tailor can help if unsure.</p>
+            <div class="measurements-grid">
+              <div class="measurement-field">
+                <label for="mBust">
+                  <i class="fas fa-circle-dot"></i> Bust
+                </label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="mBust" placeholder="e.g. 92" min="50" max="200" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="measurement-field">
+                <label for="mWaist">
+                  <i class="fas fa-circle-dot"></i> Waist
+                </label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="mWaist" placeholder="e.g. 74" min="40" max="200" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="measurement-field">
+                <label for="mHips">
+                  <i class="fas fa-circle-dot"></i> Hips
+                </label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="mHips" placeholder="e.g. 98" min="50" max="200" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="measurement-field">
+                <label for="mHeight">
+                  <i class="fas fa-circle-dot"></i> Height
+                </label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="mHeight" placeholder="e.g. 165" min="100" max="220" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="measurement-field">
+                <label for="mShoulder">
+                  <i class="fas fa-circle-dot"></i> Shoulder Width
+                </label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="mShoulder" placeholder="e.g. 38" min="20" max="80" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="measurement-field">
+                <label for="mSleeve">
+                  <i class="fas fa-circle-dot"></i> Sleeve Length
+                </label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="mSleeve" placeholder="e.g. 60" min="20" max="100" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="measurement-field">
+                <label for="mThigh">
+                  <i class="fas fa-circle-dot"></i> Thigh
+                </label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="mThigh" placeholder="e.g. 56" min="30" max="120" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="measurement-field">
+                <label for="mInseam">
+                  <i class="fas fa-circle-dot"></i> Inseam
+                </label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="mInseam" placeholder="e.g. 76" min="30" max="120" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="measurement-field">
+                <label for="mBackLength">
+                  <i class="fas fa-circle-dot"></i> Back Length
+                </label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="mBackLength" placeholder="e.g. 42" min="20" max="80" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="measurement-field">
+                <label for="mNeck">
+                  <i class="fas fa-circle-dot"></i> Neck
+                </label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="mNeck" placeholder="e.g. 34" min="20" max="60" />
+                  <span>cm</span>
+                </div>
+              </div>
+            </div>
+            <p class="measurements-save-note"><i class="fas fa-info-circle"></i> Your measurements will be included with your order note.</p>
+          </div>
         </div>
 
         <div class="modal-actions">
