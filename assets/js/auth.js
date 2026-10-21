@@ -62,7 +62,7 @@ async function signOut() {
 /* ─── PASSWORD RESET ──────────────────────────────────── */
 async function sendPasswordReset(email) {
   const { error } = await db.auth.resetPasswordForEmail(email, {
-    redirectTo: window.location.origin + '/account.html'
+    redirectTo: 'https://weartam.netlify.app/account.html'
   })
   if (error) throw error
 }
