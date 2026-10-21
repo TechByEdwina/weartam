@@ -1938,3 +1938,66 @@ ul { list-style: none; }
 @media (max-width: 480px) {
   .auth-modal-inner { padding: 40px 20px 32px; }
 }
+
+/* ─── PASSWORD TOGGLE ─────────────────────────────────── */
+.password-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrap input {
+  width: 100%;
+  padding-right: 44px !important;
+}
+
+.pw-toggle {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--grey-soft);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  transition: color var(--transition-fast);
+}
+
+.pw-toggle:hover { color: var(--black); }
+
+/* ─── AUTH MODAL SCROLL FIX ───────────────────────────── */
+.auth-modal {
+  overflow-y: auto;
+  align-items: flex-start;
+  padding: 80px 24px 40px;
+}
+
+@media (min-height: 700px) {
+  .auth-modal { align-items: center; padding: 24px; }
+}
+
+/* ─── CONFIRM PANEL ───────────────────────────────────── */
+.confirm-icon {
+  width: 72px; height: 72px;
+  background: linear-gradient(135deg, #F5F5F0, #E8E4DD);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+
+.confirm-note {
+  font-size: 0.8rem;
+  color: var(--grey-soft);
+  margin-top: 20px;
+  display: inline;
+}
+
+.confirm-resend {
+  font-size: 0.8rem;
+  display: inline;
+  margin-left: 4px;
+}

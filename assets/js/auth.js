@@ -173,10 +173,12 @@ function initAuthModal() {
   }
 
   function showPanel(name) {
-    [panelLogin, panelSignup, panelReset].forEach(p => p?.classList.add('hidden'))
-    if (name === 'login')  panelLogin?.classList.remove('hidden')
-    if (name === 'signup') panelSignup?.classList.remove('hidden')
-    if (name === 'reset')  panelReset?.classList.remove('hidden')
+    [panelLogin, panelSignup, panelReset,
+     document.getElementById('authPanelConfirm')].forEach(p => p?.classList.add('hidden'))
+    if (name === 'login')   panelLogin?.classList.remove('hidden')
+    if (name === 'signup')  panelSignup?.classList.remove('hidden')
+    if (name === 'reset')   panelReset?.classList.remove('hidden')
+    if (name === 'confirm') document.getElementById('authPanelConfirm')?.classList.remove('hidden')
   }
 
   function clearForms() {
@@ -189,11 +191,14 @@ function initAuthModal() {
   }
 
   // Nav button: open modal or go to account
+  // First-time visitors see Sign Up first, returning users see Log In
   authNavBtn?.addEventListener('click', () => {
     if (authNavBtn.dataset.state === 'signed-in') {
       window.location.href = 'account.html'
     } else {
-      openModal('login')
+      // If user has visited before (has localStorage flag), show login — otherwise signup
+      const returning = localStorage.getItem('tam_returning')
+      openModal(returning ? 'login' : 'signup')
     }
   })
 
@@ -221,6 +226,7 @@ function initAuthModal() {
 
     try {
       await signIn(email, password)
+      localStorage.setItem('tam_returning', '1')
       showToast('Welcome back to TAM!')
       closeModal()
     } catch (err) {
@@ -254,7 +260,8 @@ function initAuthModal() {
 
     try {
       await signUp(fullName, email, password)
-      showAuthError('signupError', 'Check your email to confirm your account.', 'success')
+      // Show full confirmation panel instead of inline banner
+      showPanel('confirm')
       signupForm.reset()
     } catch (err) {
       showAuthError('signupError', friendlyError(err.message))
@@ -279,6 +286,21 @@ function initAuthModal() {
       showAuthError('resetMsg', friendlyError(err.message))
     } finally {
       setAuthLoading(btn, false)
+    }
+  })
+
+  // Resend confirmation email
+  document.getElementById('resendConfirm')?.addEventListener('click', async () => {
+    const email = document.getElementById('signupEmail')?.value?.trim()
+    if (!email) {
+      showAuthError('resendMsg', 'Please go back and enter your email first.', 'error')
+      return
+    }
+    try {
+      await db.auth.resend({ type: 'signup', email })
+      showAuthError('resendMsg', 'Confirmation email resent. Check your inbox.', 'success')
+    } catch (err) {
+      showAuthError('resendMsg', 'Could not resend. Please try signing up again.', 'error')
     }
   })
 
@@ -347,4 +369,18 @@ function friendlyError(msg) {
 document.addEventListener('DOMContentLoaded', () => {
   initAuth()
   initAuthModal()
+  initPasswordToggles()
 })
+
+/* ─── PASSWORD VISIBILITY TOGGLES ───────────────────────── */
+function initPasswordToggles() {
+  document.querySelectorAll('.pw-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const input = document.getElementById(btn.dataset.target)
+      if (!input) return
+      const isPassword = input.type === 'password'
+      input.type = isPassword ? 'text' : 'password'
+      btn.querySelector('i').className = isPassword ? 'fas fa-eye-slash' : 'fas fa-eye'
+    })
+  })
+}
