@@ -72,6 +72,14 @@ function onSignedIn(user) {
   updateNavForUser(user)
   // Pre-fill measurements if modal is open
   loadUserMeasurements()
+  // Welcome back toast — only on landing page, only once per session
+  if (!sessionStorage.getItem('tam_welcomed') && window.location.pathname.includes('index')) {
+    const name = user.user_metadata?.full_name?.split(' ')[0] || ''
+    setTimeout(() => {
+      showToast('Welcome back' + (name ? ', ' + name : '') + ' 👋')
+      sessionStorage.setItem('tam_welcomed', '1')
+    }, 1500)
+  }
 }
 
 function onSignedOut() {
@@ -81,22 +89,28 @@ function onSignedOut() {
 
 /* ─── NAV UPDATE ──────────────────────────────────────── */
 function updateNavForUser(user) {
-  const authBtn = document.getElementById('authNavBtn')
+  const authBtn   = document.getElementById('authNavBtn')
+  const authLabel = document.getElementById('authNavLabel')
   if (!authBtn) return
 
   const name = user.user_metadata?.full_name?.split(' ')[0] || 'Account'
-  authBtn.innerHTML = `<i class="fas fa-circle-user"></i> <span class="auth-name">${escapeHtml(name)}</span>`
+  if (authLabel) authLabel.textContent = 'Hi, ' + name
   authBtn.setAttribute('data-state', 'signed-in')
   authBtn.title = 'My Account'
+
+  // Gold dot indicator
+  authBtn.classList.add('signed-in')
 }
 
 function updateNavForGuest() {
-  const authBtn = document.getElementById('authNavBtn')
+  const authBtn   = document.getElementById('authNavBtn')
+  const authLabel = document.getElementById('authNavLabel')
   if (!authBtn) return
 
-  authBtn.innerHTML = `<i class="fas fa-circle-user"></i>`
+  if (authLabel) authLabel.textContent = 'Log In'
   authBtn.setAttribute('data-state', 'signed-out')
   authBtn.title = 'Log In'
+  authBtn.classList.remove('signed-in')
 }
 
 /* ─── MEASUREMENTS ────────────────────────────────────── */

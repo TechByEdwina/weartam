@@ -41,6 +41,17 @@ body {
   cursor: none; /* custom cursor active */
 }
 
+/* Always restore normal cursor on interactive elements */
+input, textarea, select, [contenteditable] {
+  cursor: text !important;
+}
+
+a, button, label, .filter-tab, .size-btn, .lookbook-card,
+.social-tile, .product-card, .pw-toggle, .auth-link,
+.account-nav-item, [role="button"] {
+  cursor: pointer !important;
+}
+
 body.no-scroll { overflow: hidden; }
 
 a { text-decoration: none; color: inherit; }
@@ -2000,4 +2011,60 @@ ul { list-style: none; }
   font-size: 0.8rem;
   display: inline;
   margin-left: 4px;
+}
+
+/* ─── AUTH NAV LABEL ──────────────────────────────────── */
+.auth-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px;
+  border-radius: 100px;
+  min-width: 40px;
+  white-space: nowrap;
+}
+
+.auth-nav-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: rgba(245,245,240,0.85);
+  transition: color var(--transition-fast);
+}
+
+.nav.scrolled .auth-nav-label { color: var(--charcoal); }
+.auth-nav-btn:hover .auth-nav-label { color: var(--gold) !important; }
+
+/* Signed-in gold dot indicator */
+.auth-nav-btn.signed-in .auth-nav-label { color: var(--gold) !important; }
+.auth-nav-btn.signed-in i { color: var(--gold) !important; }
+
+/* On mobile hide the label to save space */
+@media (max-width: 480px) {
+  .auth-nav-label { display: none; }
+}
+
+/* ─── AVATAR UPLOAD ───────────────────────────────────── */
+.account-avatar {
+  position: relative;
+}
+
+.avatar-upload-btn {
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 26px; height: 26px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.6rem;
+  color: var(--black);
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+  border: 2px solid var(--white);
+}
+
+.avatar-upload-btn:hover {
+  background: var(--black);
+  color: var(--bone);
+  transform: scale(1.1);
 }

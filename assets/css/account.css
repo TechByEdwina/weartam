@@ -391,14 +391,30 @@
     margin-top: 4px;
   }
 
-  .account-nav-item { flex: 1; min-width: 120px; justify-content: center; }
+  .account-nav-item { flex: 1; min-width: 100px; justify-content: center; }
   .signout-btn { margin-top: 0; border-top: none; padding-top: 12px; }
   .account-body { padding: 24px 20px; }
   .three-col { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 480px) {
-  .three-col { grid-template-columns: 1fr; }
-  .account-nav-item span { display: none; }
+@media (max-width: 600px) {
+  /* Stack all form rows on small screens */
+  .form-row { grid-template-columns: 1fr !important; }
+  .three-col { grid-template-columns: 1fr !important; }
+
+  .account-body { padding: 20px 16px; }
   .tab-title { font-size: 1.5rem; }
+
+  /* Full width inputs */
+  .account-form input,
+  .account-form textarea,
+  .measurement-input-wrap { width: 100%; }
+
+  /* Nav items label hidden on very small screens */
+  .account-nav-item span { display: none; }
+  .account-nav-item i { margin: 0; }
+}
+
+@media (max-width: 400px) {
+  .account-nav-item { min-width: 60px; padding: 10px 8px; }
 }

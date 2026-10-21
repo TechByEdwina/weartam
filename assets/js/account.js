@@ -41,11 +41,13 @@ function showAccountContent() {
 }
 
 function updateNavUser() {
-  const btn = document.getElementById('authNavBtn')
+  const btn   = document.getElementById('authNavBtn')
+  const label = document.getElementById('authNavLabel')
   if (!btn) return
   const name = currentUser.user_metadata?.full_name?.split(' ')[0] || 'Account'
-  btn.innerHTML = `<i class="fas fa-circle-user"></i> <span class="auth-name">${escapeHtml(name)}</span>`
+  if (label) label.textContent = 'Hi, ' + name
   btn.setAttribute('data-state', 'signed-in')
+  btn.classList.add('signed-in')
 }
 
 /* ─── TABS ────────────────────────────────────────────── */
@@ -64,7 +66,67 @@ function initTabs() {
   })
 }
 
-/* ─── PROFILE ─────────────────────────────────────────── */
+/* ─── PROFILE PHOTO ───────────────────────────────────── */
+async function initAvatarUpload() {
+  const input   = document.getElementById('avatarInput')
+  const preview = document.getElementById('avatarPreview')
+  const icon    = document.getElementById('avatarIcon')
+
+  // Load existing avatar
+  const avatarUrl = currentUser.user_metadata?.avatar_url
+  if (avatarUrl) {
+    preview.src = avatarUrl
+    preview.style.display = 'block'
+    if (icon) icon.style.display = 'none'
+  }
+
+  input?.addEventListener('change', async e => {
+    const file = e.target.files[0]
+    if (!file) return
+
+    // Validate file
+    if (!file.type.startsWith('image/')) {
+      showToast('Please select an image file.')
+      return
+    }
+    if (file.size > 2 * 1024 * 1024) {
+      showToast('Image must be under 2MB.')
+      return
+    }
+
+    // Show local preview immediately
+    const reader = new FileReader()
+    reader.onload = ev => {
+      preview.src = ev.target.result
+      preview.style.display = 'block'
+      if (icon) icon.style.display = 'none'
+    }
+    reader.readAsDataURL(file)
+
+    // Upload to Supabase Storage
+    try {
+      const ext      = file.name.split('.').pop()
+      const filePath = `avatars/${currentUser.id}.${ext}`
+
+      const { error: uploadError } = await db.storage
+        .from('avatars')
+        .upload(filePath, file, { upsert: true })
+
+      if (uploadError) throw uploadError
+
+      const { data } = db.storage.from('avatars').getPublicUrl(filePath)
+      const publicUrl = data.publicUrl
+
+      // Save URL to user metadata
+      await db.auth.updateUser({ data: { avatar_url: publicUrl } })
+      showToast('Profile photo updated ✓')
+    } catch (err) {
+      showToast('Could not upload photo. Please try again.')
+    }
+  })
+}
+
+
 async function loadProfile() {
   const { data, error } = await db
     .from('profiles')
@@ -342,6 +404,7 @@ function showToast(message, duration = 3000) {
 document.addEventListener('DOMContentLoaded', () => {
   initAccountPage().then(() => {
     initTabs()
+    initAvatarUpload()
     initProfileForm()
     initPasswordForm()
     initMeasurementsForm()
