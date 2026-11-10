@@ -617,20 +617,20 @@ ul { list-style: none; }
 }
 
 /* editorial colour blocks as placeholders */
-.product-img-1  { background: url('../../assets/images/product-trousers-2.jpg.jpg') center/cover no-repeat; }
-.product-img-2  { background: url('../../assets/images/product-trousers-1.jpg.jpg') center top/cover no-repeat; }
-.product-img-3  { background: url('../../assets/images/product-trousers-2.jpg.jpg') center bottom/cover no-repeat; }
-.product-img-4  { background: linear-gradient(145deg, #F5F5F0 0%, #E8E4DD 50%, #D0CAC0 100%); }
-.product-img-5  { background: url('../../assets/images/product-trousers-1.jpg.jpg') center/cover no-repeat; }
-.product-img-6  { background: url('../../assets/images/product-trousers-2.jpg.jpg') top center/cover no-repeat; }
+..product-img-1  { background: url('../../assets/images/black-dress-full.PNG') center top/cover no-repeat; }
+..product-img-2  { background: url('../../assets/images/cream-stylish-main.PNG') center/cover no-repeat; }
+..product-img-3  { background: url('../../assets/images/denim-full.PNG') center/cover no-repeat; }
+..product-img-4  { background: url('../../assets/images/pinkskirt-full.PNG') center/cover no-repeat; }
+..product-img-5  { background: url('../../assets/images/red-dress-full.PNG') center/cover no-repeat; }
+..product-img-6  { background: url('../../assets/images/red-dress-stylish.PNG') center/cover no-repeat; }
 
 .product-img-hover { opacity: 0; }
-.product-img-1h { background: url('../../assets/images/product-trousers-1.jpg.jpg') center top/cover no-repeat; }
-.product-img-2h { background: url('../../assets/images/product-trousers-2.jpg.jpg') center/cover no-repeat; }
-.product-img-3h { background: url('../../assets/images/product-trousers-1.jpg.jpg') center/cover no-repeat; }
-.product-img-4h { background: linear-gradient(165deg, #FFFFFF 0%, #F0EDE8 100%); }
-.product-img-5h { background: url('../../assets/images/product-trousers-2.jpg.jpg') center bottom/cover no-repeat; }
-.product-img-6h { background: url('../../assets/images/product-trousers-1.jpg.jpg') center bottom/cover no-repeat; }
+..product-img-1h { background: url('../../assets/images/black-dress-style.PNG') center/cover no-repeat; }
+..product-img-2h { background: url('../../assets/images/cream-full-side-style.PNG') center/cover no-repeat; }
+..product-img-3h { background: url('../../assets/images/denim-style.PNG') center/cover no-repeat; }
+..product-img-4h { background: url('../../assets/images/pink-walking.PNG') center/cover no-repeat; }
+..product-img-5h { background: url('../../assets/images/red-dress-stylish.PNG') center/cover no-repeat; }
+..product-img-6h { background: url('../../assets/images/product-trousers-1.jpg.jpg') center/cover no-repeat; }
 
 .product-card:hover .product-img:not(.product-img-hover) { transform: scale(1.04); opacity: 0; }
 .product-card:hover .product-img-hover { opacity: 1; transform: scale(1.04); }
@@ -738,7 +738,7 @@ ul { list-style: none; }
 .story-img-main {
   width: 100%; aspect-ratio: 3/4;
   border-radius: var(--radius-lg);
-  background: url('../../assets/images/product-trousers-2.jpg.jpg') center/cover no-repeat;
+  background: url('../../assets/images/red-dress-stylish.PNG') center/cover no-repeat;
 }
 
 .story-img-accent {
@@ -884,12 +884,12 @@ ul { list-style: none; }
 .lookbook-card:hover { transform: scale(1.02); }
 
 /* real images across lookbook, alternating between the two shots */
-.lb-1 { background: url('../../assets/images/product-trousers-2.jpg.jpg') center/cover no-repeat; }
-.lb-2 { background: url('../../assets/images/product-trousers-1.jpg.jpg') center/cover no-repeat; }
-.lb-3 { background: url('../../assets/images/product-trousers-2.jpg.jpg') top center/cover no-repeat; }
-.lb-4 { background: url('../../assets/images/product-trousers-1.jpg.jpg') bottom center/cover no-repeat; }
-.lb-5 { background: url('../../assets/images/product-trousers-2.jpg.jpg') bottom center/cover no-repeat; }
-.lb-6 { background: url('../../assets/images/product-trousers-1.jpg.jpg') top center/cover no-repeat; }
+.lb-1 { background: url('../../assets/images/black-dress-full.PNG') center top/cover no-repeat; }
+.lb-2 { background: url('../../assets/images/cream-stylish-main.PNG') center/cover no-repeat; }
+.lb-3 { background: url('../../assets/images/denim-full.PNG') center/cover no-repeat; }
+.lb-4 { background: url('../../assets/images/pinkskirt-full.PNG') center/cover no-repeat; }
+.lb-5 { background: url('../../assets/images/red-dress-full.PNG') center/cover no-repeat; }
+.lb-6 { background: url('../../assets/images/red-dress-stylish.PNG') center/cover no-repeat; }
 
 .lb-overlay {
   position: absolute; inset: 0;
@@ -988,12 +988,12 @@ ul { list-style: none; }
   display: block;
 }
 
-.st-1 { background: url('../../assets/images/product-trousers-2.jpg.jpg') center/cover no-repeat; }
-.st-2 { background: url('../../assets/images/product-trousers-1.jpg.jpg') center/cover no-repeat; }
-.st-3 { background: url('../../assets/images/product-trousers-2.jpg.jpg') top/cover no-repeat; }
-.st-4 { background: url('../../assets/images/product-trousers-1.jpg.jpg') bottom/cover no-repeat; }
-.st-5 { background: url('../../assets/images/product-trousers-2.jpg.jpg') bottom/cover no-repeat; }
-.st-6 { background: url('../../assets/images/product-trousers-1.jpg.jpg') top/cover no-repeat; }
+.st-1 { background: url('../../assets/images/black-dress-style.PNG') center/cover no-repeat; }
+.st-2 { background: url('../../assets/images/cream-full-side-style.PNG') center/cover no-repeat; }
+.st-3 { background: url('../../assets/images/denim-style.PNG') center/cover no-repeat; }
+.st-4 { background: url('../../assets/images/pink-walking.PNG') center/cover no-repeat; }
+.st-5 { background: url('../../assets/images/red-dress-stylish.PNG') center/cover no-repeat; }
+.st-6 { background: url('../../assets/images/pink-skirt.PNG') center/cover no-repeat; }
 
 .social-tile-overlay {
   position: absolute; inset: 0;
